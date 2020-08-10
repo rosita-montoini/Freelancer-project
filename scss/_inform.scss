@@ -1,0 +1,96 @@
+.inform__portfolio{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	margin: 5% 0 0 15%;
+	width: 60%;
+}
+
+.portfolio {
+	&__img{
+		max-width: 100%;
+    	height: auto;
+    	vertical-align: middle;
+		margin-right: 10%;
+	}
+
+	&__head{
+		@extend %fsheader;
+		font-size: 2.7em;
+		margin-bottom: 0;
+
+		&_min{
+			color: #314a5b;
+			margin-top: 1em;
+		}
+
+		& span{
+			color: $cl;
+		}
+	}
+
+	&__description{
+		@extend %fzpara;
+		width: 22em;
+
+	}
+}
+
+@media (max-width: 800px) and (min-width: 320px) {
+	.inform__portfolio{
+		display: flex;
+		flex-direction: column;
+		margin: 0 1em 0 1.4em; 
+	}
+	.portfolio__img{
+		margin-left: -10%;
+		transform: scale(1);
+	}
+	.portfolio__description{
+		width: 18em;
+	}
+}
+
+@media (max-width: 320px) and (min-width: 300px) {
+	.portfolio__img{
+		margin-left: -12%;
+	}
+	.portfolio__description{
+		width: 16em;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1022px) {
+	.inform__portfolio{
+		display: flex;
+		flex-direction: row;
+		width: 90%;
+	}
+	.portfolio__img{
+		margin-left: -18%;
+		margin-right: 0;
+	}
+	.portfolio__description{
+		width: 18em;
+	}
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+	.inform__portfolio{
+		display: flex;
+		flex-direction: row;
+		width: 90%;
+		margin: 0;
+	}
+	.portfolio__img{
+		margin-left: -4%;
+		margin-right: 2%;
+	}
+	.portfolio__description{
+		width: 22em;
+	}
+}
+
+
+

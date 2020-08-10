@@ -1,0 +1,294 @@
+body{
+	font-family: 'Montserrat', sans-serif;
+	width: 100%;    
+    margin: auto;
+    background-color: #fff;
+}
+
+$cl: #fa5c65;
+
+%fzlink{
+	color: #465065;
+	font-size: 1.1em;
+	font-weight: 700;
+	line-height: 1em;
+	text-transform: uppercase;
+	margin: 0 1.5em;
+}
+
+%fsheader{
+	color: #314a5b;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.header__block-header{
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+}
+
+.block-header{
+	display: block;
+	background: url(../images/photo.png);
+    background-size: cover;
+    background-position: top right 31%;
+    repeat: no-repeat;
+    height: 100%;
+
+    &__main {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around; 
+		margin-left: 1.5em;
+	}
+
+	&__list{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		list-style: none;
+		padding-top: 1em;
+	}
+
+	&__link{
+		text-decoration: none;
+		@extend %fzlink;
+
+		&:hover{
+			color: #3c3d4d;
+		} 
+	}
+
+	&__link-logo{
+		color: #fa5c65;
+		margin: 0 0.94em;
+
+		&:hover{
+			color: #e83f5e;
+		}
+	}
+
+	&__infa{
+		position: relative;
+		width: 34em;
+		padding: 25em 0 36em 18em;
+	}
+
+	&__head{
+		@extend %fsheader;
+		font-size: 3.2em;
+
+		
+		& span{
+			color: $cl;
+		}
+	}
+
+	&__description{
+		color: #314a5b;
+		font-family: 'Source Sans Pro';
+		font-size: 1.5em;
+		font-weight: 400;
+	}
+
+	&__btn {
+		width: 10em;
+		height: 3.8em;
+		border: none;
+		border-radius: 0.3em;
+		font-size: 1.1em;
+		font-weight: 700;
+		line-height: 1em;
+		text-transform: uppercase;
+		color: #fff; 
+		background-color: $cl;
+		margin-top: 2em;
+
+		&:hover{
+			background-color: #e3294b;
+		}
+	}
+}
+
+.burger-menu {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 12%;
+
+	&__list{
+		display: block;
+		position: fixed;
+		visibility: hidden;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 3.1em;
+		list-style: none;
+		text-align: right;
+		background: url(../images/photo-1.png);
+		background-size: cover;
+		repeat: no-repeat;
+		position: center;
+
+		& a{
+			display: block;
+			padding: 0.94em 1.3em;
+			color: #fff;
+			font-size: 1.1em;
+			font-weight: 700;
+			text-transform: uppercase;
+			text-decoration: none;
+
+			&:hover{
+				color: lightgray;
+			}
+		} 
+	}
+
+	&__lable{
+		display: flex;
+		align-items: center;
+		position: relative;
+		top: 0;
+		right: -1em;
+		width: 1.6em;
+		height: 1.6em;
+		cursor: pointer;
+		z-index: 2;
+
+		& > span,
+		& > span::before,
+		& > span::after {
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: #747474;
+		}
+
+		& > span::before {
+			content: '';
+			top: -0.5em;
+		}
+
+		& > span::after {
+			content: '';
+			top: 0.5em;
+		}
+	}
+
+	#burger-menu__input{
+		opacity: 0;
+	}
+
+	#burger-menu__input:checked ~ .burger-menu__lable > span {
+		transform: rotate(45deg);	
+	}
+
+	#burger-menu__input:checked ~ .burger-menu__lable > span::before {
+		top: 0;
+		transform: rotate(0);
+	}
+
+	#burger-menu__input:checked ~ .burger-menu__lable > span::after {
+		top: 0;
+		transform: rotate(90deg);
+	}
+
+	#burger-menu__input:checked ~ .burger-menu__list {
+		visibility: visible;
+		z-index: 1;
+		width: 100%;
+	}
+}
+
+.headhesive{
+	position: fixed;
+	transform: translateY(-100%);
+	transition: 0.5s;
+	width: 100%;
+	background: linear-gradient(to top, lightgray, #fff);
+	margin-left: 0;
+	z-index: 3;
+}
+
+.headhesive--stick{
+	transform: translateY(0);
+}
+
+
+@media (min-width: 801px) and (max-width: 1366px) {
+	.block-header__logo{
+		transform: scale(0.9);
+		margin-top: -0.63em;
+	}
+	.block-header__link {
+		font-size: 0.9em;
+		margin: 0 0.9em; 
+	}
+}
+
+@media (min-width: 801px) {
+	.burger-menu{
+		display: none;
+	}
+}
+
+@media (max-width: 1024px) and (min-width: 601px) {
+	.headhesive{
+		display: none;
+	}
+	.block-header__infa{
+		margin: 0 auto; 
+		padding: 25em 2em;
+		width: 32em;
+	}
+	.block-header__head{
+		font-size: 3em;
+	}
+	.block-header__infa{
+		margin-left: 10%;
+	}
+}
+
+
+@media (max-width: 800px) and (min-width: 320px) {
+	html { 
+		margin: 0 auto;
+		width: 100vw;
+	}
+	.headhesive{
+		display: none;
+	}
+	.block-header__nav{
+		display: none;
+	}
+	.block-header__logo{
+		transform: scale(0.9);
+		margin-top: -0.63em;
+		margin-left: -50%;
+	}
+}
+
+@media (max-width: 600px) and (min-width: 320px) {
+	.block-header__infa{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 15em;
+		text-align: center;
+		transform: scale(0.9);
+		margin: 0 auto; 
+		padding: 25em 0;
+	}
+	.block-header__head{
+		font-size: 2.6em;
+	}
+}
+
+
+

@@ -1,0 +1,92 @@
+$clhead: #465065;
+%fzpara {
+	color: #9aa0ab;
+	font-family: 'Source Sans Pro';
+	font-size: 1.1em;
+	font-weight: 400;
+	line-height: 1.4em;
+}
+
+.main__block-main {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin: 5% 9%;
+}
+
+.block-main{
+	&__service{
+		margin-right: 0;
+	}
+
+	&__theme{
+		width: 5em;
+		font-size: 1.8em;
+		font-weight: 700;
+		line-height: 1.2em;
+		text-transform: uppercase;
+		color: $clhead;
+
+		&_big{
+			width: 9em;
+		}
+
+		& span{
+			color: $cl;
+		}
+	}
+
+	&__description{
+		@extend %fzpara;
+		width: 16em;
+	}
+}
+	.button{
+		border: none;
+		border-radius: 0.3em;
+		font-size: 1.1em;
+		font-weight: 700;
+		line-height: 1em;
+		text-transform: uppercase;
+		color: $cl; 
+		background-color: #fff;
+		padding: 0;
+
+		&:hover{
+			color: #e3294b;
+		}
+
+		> i{
+			padding-left: 10px;
+		}
+	}
+
+@media (max-width: 800px) and (min-width: 320px) {
+	.main__block-main{
+		display: flex;
+		flex-direction: column;
+		margin: 1.4em;
+	}
+
+	.block-main__description{
+		width: 17em;
+	}
+}
+
+@media (max-width: 320px) and (min-width: 300px) {
+	.block-main__description{
+		width: 16em;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1022px) {
+	.main__block-main{
+		display: flex;
+		flex-direction: column;
+		margin-left: 10%;
+	}
+	.block-main__description{
+		width: 21em;
+	}
+}

@@ -1,0 +1,62 @@
+$clcont: #b9c0c6;
+
+.footer__contacts{
+	display: flex;
+	flex-direction: column;
+}
+
+.contacts__infa{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 2% 15%;
+}
+
+.contacts__item{
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	padding-left: 0;
+
+	& li {
+		padding-right: 1.7em;
+		cursor: pointer;
+		text-decoration: none;
+		transform: scale(1.2);
+
+		& a {
+			color: $clcont;
+		}
+
+		&:hover > a{
+			color: $clhead;
+		} 
+	}
+}
+
+.contacts__coper{
+	font-size: 0.88em;
+	color: $clcont;
+}
+
+.contacts__line{
+	width: 70%;
+	height: 1px;
+	background-color: $clcont;
+	margin: 0 15%;
+}
+
+@media (max-width: 767px) and (min-width: 310px) {
+	.contacts__infa{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		margin: 2% 0;
+	}
+
+	.contacts__line{
+		width: 90%;
+		margin: 0 5%;
+	}
+}
